@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: hamburgerMenu(smartNewsController),
-        appBar: customAppBar('Flash News', context, actions: [
+        appBar: customAppBar('SMART NEWS', context, actions: [
             IconButton(
             onPressed: (){
     smartNewsController.country.value = '';
@@ -84,12 +84,13 @@ class HomePage extends StatelessWidget {
                     ),
                     ),
                     ),
+                  //search icon
                   Flexible(
                     flex: 1,
                     fit: FlexFit.tight,
                     child: IconButton(
                       padding: EdgeInsets.zero,
-                      color: ColorConst.burgundy,
+                      color: ColorConst.blue,
                       onPressed: () async {
                            smartNewsController.getAllNews(
                           searchKey: smartNewsController.searchNews.value);
@@ -110,7 +111,7 @@ class HomePage extends StatelessWidget {
                     items: controller.breakingNews.map((instance) {
                     return controller.articleNotAvailable.value
                     ? const Center(
-                    child: Text("Not Found",
+                    child: Text("Loading...",
                     style: TextStyle(fontSize: 30)))
                         : controller.breakingNews.isEmpty
                     ? const Center(child: CircularProgressIndicator())

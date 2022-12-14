@@ -26,6 +26,7 @@ RxBool isLoading =false.obs;
   RxInt pageSize = 10.obs;
   //declaration of endpoint url
   String baseUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=90c5039899bd4486b226acd867c48adc";
+  //
 
   @override
   void Init(){
@@ -58,9 +59,9 @@ RxBool isLoading =false.obs;
     }
 
     //endpoint assigning
-    baseUrl =
+    baseUrl ="https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&languages=en&";
     // "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=90c5039899bd4486b226acd867c48adc";
-    "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&languages=en&";
+
     // default country is set to US
     baseUrl += country.isEmpty ? 'country=us&' : 'country=$country&';
     //baseApi += category.isEmpty ? '' : 'category=$category&';

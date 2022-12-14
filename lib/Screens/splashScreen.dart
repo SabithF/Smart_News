@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConst.burgundy,
+      backgroundColor: ColorConst.blue,
       body: Center(child: Image.asset('assets/flashNews.jpg')),
     );
   }

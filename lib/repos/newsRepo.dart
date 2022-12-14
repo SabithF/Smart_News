@@ -32,7 +32,7 @@ class NewsRepo{
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
     List<NewsMod> articleModelList = [];
-    if (response.statusCode == 200) {
+    if (response.statusCode == "ok") {
       for (var data in jsonData[NewsApiConst.articles]) {
         if (data[NewsApiConst.description].toString().isNotEmpty &&
             data[NewsApiConst.urlToImage].toString().isNotEmpty) {
@@ -61,7 +61,7 @@ class NewsRepo{
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
     List<NewsMod> articleModelList = [];
-    if (response.statusCode == 200) {
+    if (response.statusCode == "ok") {
       for (var data in jsonData[NewsApiConst.articles]) {
         if (query.isNotEmpty && data[NewsApiConst.urlToImage] != null) {
           NewsMod articleModel = NewsMod.fromJson(data);

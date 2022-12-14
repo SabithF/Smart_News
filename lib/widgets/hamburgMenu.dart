@@ -16,7 +16,7 @@ Drawer hamburgerMenu(SmartNewsController smartNewsController) {
       builder: (controller) {
             return Container(
       decoration: const BoxDecoration(
-          color: ColorConst.burgundy,
+          color: ColorConst.blue,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(Sizes.dimen_10),
             bottomRight: Radius.circular(Sizes.dimen_10),
@@ -30,7 +30,7 @@ Drawer hamburgerMenu(SmartNewsController smartNewsController) {
               ? Text(
             "Country: ${controller.cName.value.toUpperCase()}",
             style: const TextStyle(
-                color: ColorConst.white, fontSize: Sizes.dimen_18),
+                color: ColorConst.black, fontSize: Sizes.dimen_18),
           )
               : const SizedBox.shrink(),
           vertical15,
