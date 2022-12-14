@@ -1,0 +1,35 @@
+import 'package:smart_news/models/SourceMod.dart';
+
+
+class ArticleModel {
+  ArticleModel(this.source, this.author, this.title, this.description, this.url,
+      this.urlToImage, this.publishedAt, this.content);
+
+  String? author, description, urlToImage, content;
+  String title, url, publishedAt;
+  SourceMod source;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'author': author,
+      'description': description,
+      'urlToImage': urlToImage,
+      'content': content,
+      'title': title,
+      'url': url,
+      'publishedAt': publishedAt,
+      'source': source,
+    };
+  }
+
+  factory ArticleModel.fromJson(Map<String, dynamic> json) => ArticleModel(
+    SourceMod.fromJson(json['source'] as Map<String, dynamic>),
+    json['author'],
+    json['title'],
+    json['description'],
+    json['url'],
+    json['urlToImage'],
+    json['publishedAt'],
+    json['content'],
+  );
+}
